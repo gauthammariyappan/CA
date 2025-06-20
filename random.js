@@ -22,8 +22,22 @@ function getRandomName() {
   
 }
 
+// function getAppKey(){
+//   let appKey = '126132d2a20325e5ef7e500a2cfa0442';
+//   return appKey;
+
+// }
+
 function getAppKey(){
-  let appKey = '126132d2a20325e5ef7e500a2cfa0442';
+  let appKey = sessionStorage.getItem('appKey');
+  if (!appKey) {
+    if (Math.random() < 0.5) {
+      appKey = '4b3cd1b44d6f9e7351ff7f5db4eeaa88';//Ravi anna account
+    } else {
+      appKey = '126132d2a20325e5ef7e500a2cfa0442';//mywebsite
+    }
+    sessionStorage.setItem('appKey', appKey);
+  }
   return appKey;
 
 }
